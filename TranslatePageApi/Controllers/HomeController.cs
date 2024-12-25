@@ -38,7 +38,7 @@ public class HomeController(ICompositeViewEngine viewEngine, IMemoryCache cache)
 
         if (!cache.TryGetValue(cacheKey, out string[]? texts))
         {
-            var translator = new Translator("c2db0a20-eb73-4240-8534-04c08722854b:fx");
+            var translator = new Translator("yourapikey");
             var text = await translator.TranslateTextAsync(nodes, sourceLanguage, targetLanguage);
             texts = text.Select(x => x.Text).ToArray();
 
